@@ -8,7 +8,6 @@ const Header = () => {
   const navigationHandler = () => {
     setIsSelected(!isSelected);
   }
-  console.log(isSelected);
   return (
     <header className="header">
         <div className="header-bgc">
