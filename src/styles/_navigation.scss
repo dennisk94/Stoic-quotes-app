@@ -5,14 +5,12 @@
     right: 50%;
     top: 0;
     height: 100vh;
-    transition: all .2s ease-in-out;
-
+    @include transition;
     ul {
         position: absolute;
         top: 2rem;
         margin: 1rem .5rem;
         padding: 0;
-    transition: all .2s ease-in-out;
 
         li {
             list-style: none;
@@ -21,12 +19,12 @@
             a {
                 text-decoration: none;
                 color: $white;
-                transition: all .2s ease-in-out;
+                @include transition;
                 span {
                     margin-right: 1rem;
                     svg  {
                         fill: $white;
-                        transition: all .2s ease-in-out;
+                        @include transition;
                     }
                 }
                 &:hover {
@@ -38,5 +36,4 @@
             }
         }
     }
-    
 }
