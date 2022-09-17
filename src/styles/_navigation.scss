@@ -4,6 +4,7 @@
     left: 0;
     right: 50%;
     top: 0;
+    max-width: 170px;
     height: 100vh;
     @include transition;
     ul {
@@ -11,10 +12,10 @@
         top: 2rem;
         margin: 1rem .5rem;
         padding: 0;
-
         li {
             list-style: none;
-            font-size: 1.4rem;
+            font-size: 1.5rem;
+            // text-align: center;
             margin: 1rem 0;
             a {
                 text-decoration: none;
@@ -35,5 +36,11 @@
                 }
             }
         }
+        @media ( min-width: $breakpoint-mobile) {
+            padding: 0 0 0 1rem;
+        }
+    }
+    @media ( min-width: $breakpoint-mobile ) {
+        max-width: 195px;
     }
 }
