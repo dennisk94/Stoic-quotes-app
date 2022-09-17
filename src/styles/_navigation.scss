@@ -1,0 +1,42 @@
+.navigation {
+    position: fixed;
+    background-color: $nav-bgc;
+    left: 0;
+    right: 50%;
+    top: 0;
+    height: 100vh;
+    transition: all .2s ease-in-out;
+
+    ul {
+        position: absolute;
+        top: 2rem;
+        margin: 1rem .5rem;
+        padding: 0;
+    transition: all .2s ease-in-out;
+
+        li {
+            list-style: none;
+            font-size: 1.4rem;
+            margin: 1rem 0;
+            a {
+                text-decoration: none;
+                color: $white;
+                transition: all .2s ease-in-out;
+                span {
+                    margin-right: 1rem;
+                    svg  {
+                        fill: $white;
+                        transition: all .2s ease-in-out;
+                    }
+                }
+                &:hover {
+                    color: $nav-anchor;
+                    span svg {
+                        fill: $nav-anchor;
+                    }
+                }
+            }
+        }
+    }
+    
+}

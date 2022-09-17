@@ -1,0 +1,33 @@
+.hamburger {
+    position: absolute;
+    z-index: 1;
+    font-size: 2.2rem;
+    margin: .5rem 0 0 .3rem;
+    cursor: pointer;
+    
+    path {
+        fill: $white;
+        transition: all .2s ease-in-out;
+    }
+    &:hover {
+        path {
+            fill: $nav-anchor;
+        }
+    }
+}
+.active {
+    display: inline-block;
+    &:active {
+        transition: all 1s ease-in-out;
+
+    }
+
+}
+.inactive {
+    display: none;
+    &:active {
+        transition: all 1s ease-in-out;
+
+    }
+
+}
