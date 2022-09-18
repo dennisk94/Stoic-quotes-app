@@ -18,6 +18,9 @@
     .quote::after {
         content: close-quote;
     }
+    figure {
+        margin: 1rem 0.5rem;
+    }
     .quote {
         margin: 1rem 0 2rem 0;
         quotes: "“" "”" "‘" "’";
@@ -29,7 +32,7 @@
         margin-top: 4rem;
         img {
             width: 15%;
-            max-width: 80px;
+            max-width: 60px;
             border-radius: 100%;
             margin-right: .5rem;
         }
