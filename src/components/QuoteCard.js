@@ -31,12 +31,21 @@ const QuoteCard = ( { quote } ) => {
   }
 
   const handleBookmark = (id) => {
+    // if ( isBookmarked === true ) {
+    //   setIsBookmarked(false);
+    // } else if ( isBookmarked === false ) {
+    //   setIsBookmarked(true);
+    // }
+    // get local storage
     let doesStorageExist = localStorage.getItem('bookmarks');
+    // check if local storage already exists
     if ( doesStorageExist === null ) {
+      setIsBookmarked(true);
       let copyText = document.querySelector(`.quote-${ id }`).textContent;
       let copyAuthor = document.querySelector(`.author-${ id }`).textContent;
       let newQuote = [
         {
+          id,
           quote: copyText,
           author: copyAuthor
         }
@@ -49,22 +58,37 @@ const QuoteCard = ( { quote } ) => {
       let copyAuthor = document.querySelector(`.author-${ id }`).textContent;
       let existingStorage = localStorage.getItem('bookmarks');
       let oExistingStorage = JSON.parse(existingStorage);
-      let newQuote = [
-        ...oExistingStorage,
-        {
-          quote: copyText,
-          author: copyAuthor
-        }
-      ]
-      let addQuote = JSON.stringify( newQuote );
-      localStorage.setItem('bookmarks', addQuote);
-      // console.log(...oExistingStorage);
+      // check if bookmarked quote already exists
+      let doesQuoteExist = oExistingStorage.find( quote => quote.id === id);
+      console.log(doesQuoteExist);
+      if ( !doesQuoteExist ) {
+        console.log(doesQuoteExist);
+        setIsBookmarked(true);
+        
+        let newQuote = [
+          ...oExistingStorage,
+          {
+            id,
+            quote: copyText,
+            author: copyAuthor
+          }
+        ]
+        let addQuote = JSON.stringify( newQuote );
+        localStorage.setItem('bookmarks', addQuote);
+        console.log('New Quote added!');
+      } else {
+        setIsBookmarked(false);
+        console.log('Quote already exists in local storage');
+        return;
+      }
+      console.log(oExistingStorage);
     }
     // console.log(id);
-    setIsBookmarked(true);
-    setTimeout(() => {
-      setIsBookmarked(false);
-    }, 1000);
+   
+    // setIsBookmarked(!isBookmarked);
+    // setTimeout(() => {
+    //   setIsBookmarked(false);
+    // }, 1000);
   }
 
   // Use author_id to programmatically display thumbnail

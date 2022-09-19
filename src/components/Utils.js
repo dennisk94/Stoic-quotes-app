@@ -14,7 +14,7 @@ const Utils = ( { handleCopyText, isCopied, handleBookmark, isBookmarked, id } )
         {
             isBookmarked === false ? <BsBookmark className="bookmark" onClick={ () => handleBookmark(id)}/>
             :
-            <BsBookmarkFill className="bookmark"/>
+            <BsBookmarkFill className="bookmark" onClick={ () => handleBookmark(id) }/>
         }
     </div>
   )
