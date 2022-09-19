@@ -3,11 +3,24 @@ import Seneca from '../images/thumbnail/seneca.jpg';
 import Epictetus from '../images/thumbnail/epictetus.jpg';
 import Cato from '../images/thumbnail/cato.jpg';
 import Zeno from '../images/thumbnail/zeno.jpg';
+import Utils from './Utils';
 
 const QuoteCard = ( { quote } ) => {
- 
-  const { body, author, author_id } = quote;
-  // console.log(quote);
+  const { id, body, author, author_id } = quote;
+  // Copy to clipboard functionality
+  // Select the quote by it's id 
+    const handleCopyText = (id) => {
+      let copyText = document.querySelector(`.quote-${ id }`).textContent;
+      let copyAuthor = document.querySelector(`.author-${ id }`).textContent;
+      let textarea = document.createElement('textarea');
+      textarea.textContent = `${ copyText } 
+
+-${ copyAuthor }`;
+      document.body.append(textarea);
+      textarea.select();
+      document.execCommand("copy");
+      textarea.remove();
+    }
   // Use author_id to programmatically display thumbnail
   const handleThumbnail = () => {
     switch (author_id) {
@@ -27,16 +40,17 @@ const QuoteCard = ( { quote } ) => {
   return (
       <div className="quote-card">
         <figure>
-          <blockquote className="quote">
+          <blockquote className={`quote quote-${ id }`}>
             { body }
           </blockquote>
           <figcaption className="attribution">
               { handleThumbnail() }
-              <p className="author">
+              <p className={ `author author-${id}` }>
                 { author }
               </p>
           </figcaption>
         </figure>
+        <Utils handleCopyText={()=> handleCopyText(id)} />
       </div>
   )
 }

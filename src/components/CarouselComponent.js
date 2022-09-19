@@ -18,9 +18,12 @@ const CarouselComponent = ( { quotes } ) => {
         ariaLabel:'carousel',
       }
   return (
-    <Carousel {...settings} className='carousel-outer'>
-        { quotes !== null && quotes.map( ( quote, i ) =><QuoteCard quote={ quote } key={ i }/>) }      
-    </Carousel>
+    <>
+      <Carousel {...settings} className='carousel-outer'>
+          { quotes !== null && quotes.map( ( quote, i ) =><QuoteCard quote={ quote } key={ i } />) }      
+      </Carousel>
+    </>
+    
   )
 }
 

@@ -1,14 +1,13 @@
 import { useState, useEffect } from "react"
 import CarouselComponent from '../components/CarouselComponent';
+// import { BsBookmark } from "react-icons/bi";
+// import { BsBookmarkFill } from "react-icons/bi";
 
 const HomePage = () => {
   const generateRandomPage = () => {
     return Math.floor(( Math.random() * 6 ) + 1 );
-    // setPage( randomPage );
-    // console.log(randomPage);
   }
   const [ quotes, setQuotes ] = useState(null);
-  // const [ page, setPage ] = useState(generateRandomPage());
 
   useEffect(() => {
     const fetchRandomQuotes = async () => {
@@ -18,12 +17,9 @@ const HomePage = () => {
       // const res = await fetch('https://stoicquotesapi.com/v1/api/quotes/Zeno');
       let data = await res.json();
       setQuotes(data.data);
-      // generateRandomPage(data.last_page);
     }
     fetchRandomQuotes();
   }, []);
-  // console.log(page);
-  console.log(quotes);
   return (
     <div className="home-page">
       <div className="carousel-wrapper">
