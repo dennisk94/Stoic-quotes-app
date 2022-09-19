@@ -3,7 +3,7 @@ import { AiFillCopy } from "react-icons/ai";
 import { BsBookmark } from "react-icons/bs";
 import { BsBookmarkFill } from "react-icons/bs";
 
-const Utils = ( { handleCopyText, isCopied, handleBookmark, isBookmarked } ) => {
+const Utils = ( { handleCopyText, isCopied, handleBookmark, isBookmarked, id } ) => {
   return (
     <div className="utils">
         {
@@ -12,7 +12,7 @@ const Utils = ( { handleCopyText, isCopied, handleBookmark, isBookmarked } ) => 
             <AiFillCopy className="copy" />
         }
         {
-            isBookmarked === false ? <BsBookmark className="bookmark" onClick={handleBookmark}/>
+            isBookmarked === false ? <BsBookmark className="bookmark" onClick={ () => handleBookmark(id)}/>
             :
             <BsBookmarkFill className="bookmark"/>
         }

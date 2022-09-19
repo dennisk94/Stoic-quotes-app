@@ -30,7 +30,37 @@ const QuoteCard = ( { quote } ) => {
     }, 1000);
   }
 
-  const handleBookmark = () => {
+  const handleBookmark = (id) => {
+    let doesStorageExist = localStorage.getItem('bookmarks');
+    if ( doesStorageExist === null ) {
+      let copyText = document.querySelector(`.quote-${ id }`).textContent;
+      let copyAuthor = document.querySelector(`.author-${ id }`).textContent;
+      let newQuote = [
+        {
+          quote: copyText,
+          author: copyAuthor
+        }
+      ];
+      let addQuote = JSON.stringify(newQuote);
+      // set new local storage item
+      localStorage.setItem('bookmarks', addQuote );
+    } else {
+      let copyText = document.querySelector(`.quote-${ id }`).textContent;
+      let copyAuthor = document.querySelector(`.author-${ id }`).textContent;
+      let existingStorage = localStorage.getItem('bookmarks');
+      let oExistingStorage = JSON.parse(existingStorage);
+      let newQuote = [
+        ...oExistingStorage,
+        {
+          quote: copyText,
+          author: copyAuthor
+        }
+      ]
+      let addQuote = JSON.stringify( newQuote );
+      localStorage.setItem('bookmarks', addQuote);
+      // console.log(...oExistingStorage);
+    }
+    // console.log(id);
     setIsBookmarked(true);
     setTimeout(() => {
       setIsBookmarked(false);
@@ -66,7 +96,7 @@ const QuoteCard = ( { quote } ) => {
               </p>
           </figcaption>
         </figure>
-        <Utils handleCopyText={()=> handleCopyText(id)} isCopied={ isCopied } handleBookmark={ handleBookmark } isBookmarked={ isBookmarked }/>
+        <Utils handleCopyText={()=> handleCopyText(id)} isCopied={ isCopied } handleBookmark={ handleBookmark } isBookmarked={ isBookmarked } id={id}/>
       </div>
   )
 }
