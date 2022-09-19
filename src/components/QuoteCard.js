@@ -31,11 +31,6 @@ const QuoteCard = ( { quote } ) => {
   }
 
   const handleBookmark = (id) => {
-    // if ( isBookmarked === true ) {
-    //   setIsBookmarked(false);
-    // } else if ( isBookmarked === false ) {
-    //   setIsBookmarked(true);
-    // }
     // get local storage
     let doesStorageExist = localStorage.getItem('bookmarks');
     // check if local storage already exists
@@ -64,7 +59,6 @@ const QuoteCard = ( { quote } ) => {
       if ( !doesQuoteExist ) {
         console.log(doesQuoteExist);
         setIsBookmarked(true);
-        
         let newQuote = [
           ...oExistingStorage,
           {
@@ -77,18 +71,18 @@ const QuoteCard = ( { quote } ) => {
         localStorage.setItem('bookmarks', addQuote);
         console.log('New Quote added!');
       } else {
+        // remove quote if it already exists in local storage using array.filter();
+        // get local storage
+        let bookmarksStorage = localStorage.getItem('bookmarks'); 
+        let oBookmarks = JSON.parse(bookmarksStorage);
+        let filteredBookmarks = oBookmarks.filter( ( quote ) => quote.id !== id );
+        let oUpdatedQuotes = JSON.stringify(filteredBookmarks); 
+        localStorage.setItem('bookmarks', oUpdatedQuotes);
         setIsBookmarked(false);
-        console.log('Quote already exists in local storage');
         return;
       }
       console.log(oExistingStorage);
     }
-    // console.log(id);
-   
-    // setIsBookmarked(!isBookmarked);
-    // setTimeout(() => {
-    //   setIsBookmarked(false);
-    // }, 1000);
   }
 
   // Use author_id to programmatically display thumbnail
