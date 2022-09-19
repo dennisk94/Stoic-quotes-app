@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import Marcus from '../images/thumbnail/marcus.jpg';
 import Seneca from '../images/thumbnail/seneca.jpg';
 import Epictetus from '../images/thumbnail/epictetus.jpg';
@@ -7,20 +8,25 @@ import Utils from './Utils';
 
 const QuoteCard = ( { quote } ) => {
   const { id, body, author, author_id } = quote;
+  const [ isCopied, setIsCopied ] = useState(false);
   // Copy to clipboard functionality
   // Select the quote by it's id 
-    const handleCopyText = (id) => {
-      let copyText = document.querySelector(`.quote-${ id }`).textContent;
-      let copyAuthor = document.querySelector(`.author-${ id }`).textContent;
-      let textarea = document.createElement('textarea');
-      textarea.textContent = `${ copyText } 
+  const handleCopyText = (id) => {
+    let copyText = document.querySelector(`.quote-${ id }`).textContent;
+    let copyAuthor = document.querySelector(`.author-${ id }`).textContent;
+    let textarea = document.createElement('textarea');
+    textarea.textContent = `${ copyText } 
 
 -${ copyAuthor }`;
-      document.body.append(textarea);
-      textarea.select();
-      document.execCommand("copy");
-      textarea.remove();
-    }
+          document.body.append(textarea);
+          textarea.select();
+          document.execCommand("copy");
+          textarea.remove();
+    setIsCopied(true);
+    setTimeout(() => {
+      setIsCopied(false);
+    }, 1000);
+  }
   // Use author_id to programmatically display thumbnail
   const handleThumbnail = () => {
     switch (author_id) {
@@ -50,7 +56,7 @@ const QuoteCard = ( { quote } ) => {
               </p>
           </figcaption>
         </figure>
-        <Utils handleCopyText={()=> handleCopyText(id)} />
+        <Utils handleCopyText={()=> handleCopyText(id)} isCopied={ isCopied }/>
       </div>
   )
 }
