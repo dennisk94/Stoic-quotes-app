@@ -12,7 +12,7 @@ const Header = () => {
     <header className="header">
         <div className="header-bgc">
           <NavLink to='/' className='app-heading'>
-            <h1>The Stoic App</h1>
+            <h1>The Stoic</h1>
           </NavLink>
         </div>
         <HiMenu className={`hamburger ${ isSelected ? 'active' : 'inactive' }`} onClick={ navigationHandler}/>
