@@ -1,4 +1,4 @@
-.author {
+.author-card {
     color: $white;
     width: 65%;
     background-color: $author-bgc;
@@ -11,9 +11,13 @@
         border: none;
         border-radius: 15px 15px 0 0;
     }
-    .name {
+    .stoic-name {
         p {
             text-align: center;
         }
+    }
+    @media ( min-width: $breakpoint-mobile ) {
+        width: 65%;
+        max-width: 65%;
     }
 }

@@ -11,9 +11,9 @@ const Author = ( { author } ) => {
             externalResource
         } = author;
   return (
-    <div className="author">
+    <div className="author-card">
         <img src={ thumbnail } alt="thumbnail" className="thumbnail"/>
-        <div className="name">
+        <div className="stoic-name">
             <p>
                 { name }
             </p>

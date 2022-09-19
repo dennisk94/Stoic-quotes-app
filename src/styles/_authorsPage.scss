@@ -2,8 +2,24 @@
     .authors-wrapper {
         position: absolute;
         top: 5rem;
+        right: 0;
+        left: 0;
         display: flex;
         flex-direction: column;
         align-items: center;
+        @media ( min-width: $breakpoint-mobile ) {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: auto;
+            justify-items: center;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        @media ( min-width: $breakpoint-desktop ) {
+            grid-template-columns: repeat( 3, 1fr);
+            max-width: 1000px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
     }
 }
