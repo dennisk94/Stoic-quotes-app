@@ -1,7 +1,5 @@
 import { useState, useEffect } from "react"
 import CarouselComponent from '../components/CarouselComponent';
-// import { BsBookmark } from "react-icons/bi";
-// import { BsBookmarkFill } from "react-icons/bi";
 
 const HomePage = () => {
   const generateRandomPage = () => {

@@ -8,7 +8,9 @@ import Utils from './Utils';
 
 const QuoteCard = ( { quote } ) => {
   const { id, body, author, author_id } = quote;
-  const [ isCopied, setIsCopied ] = useState(false);
+  const [ isCopied, setIsCopied ] = useState(false); // state determining if quote was copied or not.
+  const [ isBookmarked, setIsBookmarked ] = useState(false);
+
   // Copy to clipboard functionality
   // Select the quote by it's id 
   const handleCopyText = (id) => {
@@ -27,6 +29,14 @@ const QuoteCard = ( { quote } ) => {
       setIsCopied(false);
     }, 1000);
   }
+
+  const handleBookmark = () => {
+    setIsBookmarked(true);
+    setTimeout(() => {
+      setIsBookmarked(false);
+    }, 1000);
+  }
+
   // Use author_id to programmatically display thumbnail
   const handleThumbnail = () => {
     switch (author_id) {
@@ -56,7 +66,7 @@ const QuoteCard = ( { quote } ) => {
               </p>
           </figcaption>
         </figure>
-        <Utils handleCopyText={()=> handleCopyText(id)} isCopied={ isCopied }/>
+        <Utils handleCopyText={()=> handleCopyText(id)} isCopied={ isCopied } handleBookmark={ handleBookmark } isBookmarked={ isBookmarked }/>
       </div>
   )
 }
