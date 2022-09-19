@@ -1,0 +1,16 @@
+.carousel-wrapper {
+    // position: relative;
+    .carousel-outer {
+        // position: absolute;
+        // top: 19rem;
+        z-index: -1;
+        .carousel-slider {
+            width: 100%;
+            transform: translateY(50%);
+            top: 8rem;
+            .slider-wrapper {
+                height: 350px !important;
+            }
+        }
+    }
+}
