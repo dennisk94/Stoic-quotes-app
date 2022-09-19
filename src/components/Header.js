@@ -2,23 +2,25 @@ import Navigation from "./Navigation"
 import { useState } from "react";
 import { HiMenu } from "react-icons/hi";
 import { BiMenuAltLeft } from "react-icons/bi";
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const [ isSelected, setIsSelected ] = useState(true);
+
   const navigationHandler = () => {
     setIsSelected(!isSelected);
   }
+  console.log(isSelected);
   return (
     <header className="header">
         <div className="header-bgc">
-          <NavLink to='/' className='app-heading'>
+          <Link to='/' className='app-heading'>
             <h1>The Stoic</h1>
-          </NavLink>
+          </Link>
         </div>
         <HiMenu className={`hamburger ${ isSelected ? 'active' : 'inactive' }`} onClick={ navigationHandler}/>
         <BiMenuAltLeft onClick={ navigationHandler} className={`hamburger ${ isSelected ? 'inactive': null }`}/>
-        <Navigation isSelected={isSelected}/>
+        <Navigation isSelected={isSelected} navigationHandler={ navigationHandler}/>
     </header>
   )
 }
