@@ -55,9 +55,7 @@ const QuoteCard = ( { quote } ) => {
       let oExistingStorage = JSON.parse(existingStorage);
       // check if bookmarked quote already exists
       let doesQuoteExist = oExistingStorage.find( quote => quote.id === id);
-      console.log(doesQuoteExist);
       if ( !doesQuoteExist ) {
-        console.log(doesQuoteExist);
         setIsBookmarked(true);
         let newQuote = [
           ...oExistingStorage,
@@ -69,7 +67,6 @@ const QuoteCard = ( { quote } ) => {
         ]
         let addQuote = JSON.stringify( newQuote );
         localStorage.setItem('bookmarks', addQuote);
-        console.log('New Quote added!');
       } else {
         // remove quote if it already exists in local storage using array.filter();
         // get local storage
@@ -81,7 +78,6 @@ const QuoteCard = ( { quote } ) => {
         setIsBookmarked(false);
         return;
       }
-      console.log(oExistingStorage);
     }
   }
 

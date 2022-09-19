@@ -1,0 +1,19 @@
+.author {
+    color: $white;
+    width: 65%;
+    background-color: $author-bgc;
+    overflow: hidden;
+    border: none;
+    border-radius: 15px;
+    margin: 1rem 0;
+    .thumbnail {
+        width: 100%;
+        border: none;
+        border-radius: 15px 15px 0 0;
+    }
+    .name {
+        p {
+            text-align: center;
+        }
+    }
+}
