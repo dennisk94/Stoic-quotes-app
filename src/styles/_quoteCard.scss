@@ -1,14 +1,15 @@
 .quote-card {
     position: absolute;
-    top: 50%;
+    top: 2rem;
     right: 0;
     left: 0;
-    width: 95%;
-    transform: translateY(-50%);
+    max-width: 95%;
+    // width: 50%;
+    // transform: translateY(-50%);
     margin: 0 auto;
     border: none;
     border-radius: 10px;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     color: $white;
     text-align: center;
     z-index: -1;
@@ -29,17 +30,23 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        margin-top: 4rem;
+        margin-top: 2.5rem;
         img {
             width: 15%;
-            max-width: 60px;
+            max-width: 55px;
             border-radius: 100%;
             margin-right: .5rem;
         }
         .author {
             margin-left: .5rem;
-            font-size: 1rem;
+            font-size: .9rem;
             font-weight: 800;
         }
+    }
+    @media ( min-width: $breakpoint-tablet ) {
+        max-width: 75%;
+    }
+    @media ( min-width: $breakpoint-desktop ) {
+        max-width: 50%;
     }
 }

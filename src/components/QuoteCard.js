@@ -5,7 +5,9 @@ import Cato from '../images/thumbnail/cato.jpg';
 import Zeno from '../images/thumbnail/zeno.jpg';
 
 const QuoteCard = ( { quote } ) => {
+ 
   const { body, author, author_id } = quote;
+  // console.log(quote);
   // Use author_id to programmatically display thumbnail
   const handleThumbnail = () => {
     switch (author_id) {
@@ -23,19 +25,19 @@ const QuoteCard = ( { quote } ) => {
     }
   }
   return (
-    <div className="quote-card">
-      <figure>
-        <blockquote className="quote">
-          { body }
-        </blockquote>
-        <figcaption className="attribution">
-            { handleThumbnail() }
-            <p className="author">
-              { author }
-            </p>
-        </figcaption>
-      </figure>
-    </div>
+      <div className="quote-card">
+        <figure>
+          <blockquote className="quote">
+            { body }
+          </blockquote>
+          <figcaption className="attribution">
+              { handleThumbnail() }
+              <p className="author">
+                { author }
+              </p>
+          </figcaption>
+        </figure>
+      </div>
   )
 }
 

@@ -1,26 +1,38 @@
 import { useState, useEffect } from "react"
-import QuoteCard from "../components/QuoteCard"
+import CarouselComponent from '../components/CarouselComponent';
 
 const HomePage = () => {
-  const [ quote, setQuote ] = useState(null);
+  const generateRandomPage = () => {
+    return Math.floor(( Math.random() * 6 ) + 1 );
+    // setPage( randomPage );
+    // console.log(randomPage);
+  }
+  const [ quotes, setQuotes ] = useState(null);
+  // const [ page, setPage ] = useState(generateRandomPage());
+
   useEffect(() => {
-    const fetchRandomQuote = async () => {
-      const res = await fetch('https://stoicquotesapi.com/v1/api/quotes/random');
+    const fetchRandomQuotes = async () => {
+      const res = await fetch( `https://stoicquotesapi.com/v1/api/quotes?page=${ generateRandomPage() }` ); 
+      // const res = await fetch('https://stoicquotesapi.com/v1/api/quotes'); 
+      // const res = await fetch('https://stoicquotesapi.com/v1/api/quotes/random');
       // const res = await fetch('https://stoicquotesapi.com/v1/api/quotes/Zeno');
       let data = await res.json();
-      setQuote(data);
-      // setQuote(data.data[0]);
+      setQuotes(data.data);
+      // generateRandomPage(data.last_page);
     }
-    fetchRandomQuote();
+    fetchRandomQuotes();
   }, []);
-  console.log(quote);
+  // console.log(page);
+  console.log(quotes);
   return (
     <div className="home-page">
-      {
-        quote !== null && <QuoteCard quote={ quote }/>
-      }
+      <div className="carousel-wrapper">
+        {
+          quotes !== null && <CarouselComponent  quotes={ quotes } />
+        }
+      </div>
     </div>
   )
-}
+  }
 
 export default HomePage
