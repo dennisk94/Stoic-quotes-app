@@ -23,6 +23,10 @@
             // add the bottom two lines as a mixin
             border:none;
             border-radius: 50%;
+
+            @media ( min-width: $breakpoint-mobile ) {
+                max-width: 15% !important;
+            }
         }
         blockquote, figcaption {
             color: $white;
