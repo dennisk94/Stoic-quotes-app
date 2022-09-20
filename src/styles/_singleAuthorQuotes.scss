@@ -1,0 +1,39 @@
+.single-author-page {
+    .carousel-root {
+        position: absolute;
+        right: 0;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        margin: 0 auto;
+        width: 85%;
+        .carousel {
+            .slider-wrapper {
+                height: 480px !important;
+                ul li {
+                    // margin: 0 1rem;
+                }
+            }
+        }
+    }
+    .single-author-quote-card {
+        margin: 0;
+        img {
+            width: 35% !important;
+            // add the bottom two lines as a mixin
+            border:none;
+            border-radius: 50%;
+        }
+        blockquote, figcaption {
+            color: $white;
+        }
+        blockquote {
+            margin: 2rem 0 2rem 0;
+            font-size: 1.2rem;
+        }
+        figcaption {
+            font-size: .8rem;
+            font-weight: 800;
+        }
+    }
+}
