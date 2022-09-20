@@ -1,4 +1,5 @@
 .author-card {
+    position: relative;
     color: $white;
     width: 65%;
     background-color: $author-bgc;
@@ -14,6 +15,16 @@
     .stoic-name {
         p {
             text-align: center;
+        }
+    }
+    .info {
+        position: absolute;
+        bottom: .5rem;
+        right: 0.5rem;
+        @include transition;
+        cursor: pointer;
+        &:hover {
+            fill: $nav-anchor;
         }
     }
     @media ( min-width: $breakpoint-mobile ) {
