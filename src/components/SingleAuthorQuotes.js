@@ -1,4 +1,4 @@
-import { handleThumbnail } from "../util/handleThumbnail"
+import { handleThumbnail } from "../util/handleThumbnail";
 
 const SingleAuthorQuotes = ( { quote } ) => {
     const { id, author_id, author, body } = quote;
