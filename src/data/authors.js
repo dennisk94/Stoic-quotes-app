@@ -10,7 +10,7 @@ export const authorsData = [
     {
         id: 1,
         name: 'Marcus Aurelius',
-        slug: 'marcus-aurelius',
+        slug: 'Marcus Aurelius',
         title: 'Roman Emperor',
         born: 'April 26, 121 AD',
         death: 'March 17, 180 AD',
@@ -32,7 +32,7 @@ export const authorsData = [
     {
         id: 3,
         name: 'Epictetus',
-        slug: 'epictetus',
+        slug: 'Epictetus',
         title: 'Greek Stoic Philosopher',
         born: '50 AD',
         death: '135 AD',
@@ -43,7 +43,7 @@ export const authorsData = [
     {
         id: 4,
         name: 'Zeno',
-        slug: 'zeno',
+        slug: 'Zeno',
         title: 'Stoic Philosopher',
         born: '334 BC',
         death: '262 BC',
@@ -54,7 +54,7 @@ export const authorsData = [
     {
         id: 5,
         name: 'Cato',
-        slug: 'cato',
+        slug: 'Cato',
         title: 'Roman Stoic Senator',
         born: '95 BC',
         death: 'April 46 BC',

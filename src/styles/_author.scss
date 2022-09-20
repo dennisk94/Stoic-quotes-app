@@ -7,14 +7,22 @@
     border: none;
     border-radius: 15px;
     margin: 1rem 0;
+    padding: 0 0 0.5rem 0;
     .thumbnail {
         width: 100%;
         border: none;
         border-radius: 15px 15px 0 0;
     }
     .stoic-name {
-        p {
-            text-align: center;
+        text-align: center;
+        text-decoration: none;
+        a {
+            text-decoration: none;
+            color: $white;
+            @include transition;
+            &:hover {
+                color: $nav-anchor;
+            }
         }
     }
     .info {
