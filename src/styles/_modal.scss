@@ -1,0 +1,99 @@
+.modal {
+    overflow-y:auto;
+    svg {
+        @include transition;
+        &:hover {
+            color: $nav-anchor;
+        }
+    }
+    .close-modal {
+        position: absolute;
+        right: 0.5rem;
+        top: 0.5rem;
+        display: inline-block;
+        font-size: 1.2rem;
+        cursor: pointer;
+    }
+    .content-wrapper {
+        position: absolute;
+        top: 1.8rem;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        .general-info-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            .stats {
+                width: 70%;
+                display: inline-block;
+                h2 {
+                    font-size: 1rem;
+                }
+                h2, 
+                p {
+                    margin: 0;
+                }
+                .author-title,
+                .author-date-range {
+                    font-size: .6rem;
+                    margin: .1rem 0;
+                }
+            }
+            .author-image {
+                width: 20%;
+                border: none;
+                border-radius: 50%;
+            }
+        }
+        .biography {
+            width: 90%;
+            margin: 0.2rem auto;
+            h2, p {
+                margin: 0;
+            }
+            .biography-heading {
+                font-size: 1rem;
+                margin-bottom: .2rem;
+            }
+            .biography-text {
+                font-size: .8rem;
+            }
+        }
+        .external-resource {
+            width: 90%;
+            margin: 0.2rem auto 0.5rem auto;
+            .wikipedia-link-svg {
+                font-size: 1.3rem;
+            }
+        }
+    }
+}
+.modal::-webkit-scrollbar { // chrome, safari, opera
+    display: none;
+}
+.modal {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+.modal-active {
+        position: absolute;
+        top: 3rem;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 10;
+        background-color: $author-bgc;
+        animation: fadein .5s;
+}
+@keyframes fadein {
+	from {
+		top: 20rem;
+	}
+	to {
+		top: 3rem;
+	}
+}
+.modal-inactive {
+    display: none;
+}
