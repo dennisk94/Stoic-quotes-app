@@ -1,0 +1,17 @@
+.bookmarks-page {
+    .bookmarks-wrapper {
+        position: absolute;
+        top: 4rem;
+        right: 1rem;
+        left: 1rem;
+
+        .no-bookmarks {
+            color:$white;
+            font-size: 1.4rem;
+            text-align: center;
+            @media ( min-width: $breakpoint-mobile ) {
+                font-size: 2rem;
+            }
+        }
+    }
+}
