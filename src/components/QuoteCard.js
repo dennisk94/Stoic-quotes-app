@@ -1,10 +1,7 @@
 import { useState } from 'react';
-import Marcus from '../images/thumbnail/marcus.jpg';
-import Seneca from '../images/thumbnail/seneca.jpg';
-import Epictetus from '../images/thumbnail/epictetus.jpg';
-import Cato from '../images/thumbnail/cato.jpg';
-import Zeno from '../images/thumbnail/zeno.jpg';
+
 import Utils from './Utils';
+import { handleThumbnail } from '../util/handleThumbnail';
 
 const QuoteCard = ( { quote } ) => {
   const { id, body, author, author_id } = quote;
@@ -80,23 +77,6 @@ const QuoteCard = ( { quote } ) => {
       }
     }
   }
-
-  // Use author_id to programmatically display thumbnail
-  const handleThumbnail = () => {
-    switch (author_id) {
-      case 1:
-        return <img src={ Marcus } alt='thumbnail'/>;
-      case 2:
-        return <img src={ Seneca } alt='thumbnail'/>;
-      case 3: 
-        return <img src={ Epictetus } alt='thumbnail'/>;
-      case 4:
-        return <img src={ Cato } alt='thumbnail'/>;
-      case 5:
-        return <img src={ Zeno } alt='thumbnail'/>;
-      default:
-    }
-  }
   return (
       <div className="quote-card">
         <figure>
@@ -104,7 +84,7 @@ const QuoteCard = ( { quote } ) => {
             { body }
           </blockquote>
           <figcaption className="attribution">
-              { handleThumbnail() }
+              { handleThumbnail( author_id ) }
               <p className={ `author author-${id}` }>
                 { author }
               </p>

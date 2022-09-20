@@ -5,15 +5,9 @@ import { Link } from "react-router-dom";
 
 const Author = ( { author } ) => {
     const [ isOpen, setIsOpen ] = useState(false);
-    const { id, 
-            name,
+    const { name,
             slug,
-            title,
-            born,
-            death,
             thumbnail,
-            biography,
-            externalResource
         } = author;
     const handleInfoClick = () => {
         setIsOpen(!isOpen);
