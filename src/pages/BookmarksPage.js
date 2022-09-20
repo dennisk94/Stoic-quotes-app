@@ -22,9 +22,16 @@ const BookmarksPage = () => {
       return <h1 className='no-bookmarks'>There are no bookmarks...</h1>
     }
   }
+  const handleClass = () => {
+    if (  bookmarks !== null && bookmarks.length !== 0 ) {
+      return 'bookmarks-wrapper'
+    } else {
+      return 'no-bookmarks-wrapper'
+    }
+  }
   return (
     <div className="bookmarks-page">
-      <div className="bookmarks-wrapper">
+      <div className={ handleClass() }>
         {
           bookmarksComponent()
         }
