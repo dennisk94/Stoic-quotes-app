@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import Utils from './Utils';
 import { handleThumbnail } from '../util/util';
+import { handleBookmark } from '../localStorage/localStorageFunctions';
 
 const QuoteCard = ( { quote } ) => {
   const { id, body, author, author_id } = quote;
@@ -34,50 +35,6 @@ const QuoteCard = ( { quote } ) => {
     });
   }
 
-  const handleBookmark = (id) => {
-    let doesStorageExist = localStorage.getItem('bookmarks');                   // get local storage
-    if ( doesStorageExist === null ) {                                          // check if local storage already exists
-      setIsBookmarked(true);
-      let copyText = document.querySelector(`.quote-${ id }`).textContent;
-      let copyAuthor = document.querySelector(`.author-${ id }`).textContent;
-      let newQuote = [                                                          // Create a new quote object
-        {
-          id,
-          quote: copyText,
-          author: copyAuthor
-        }
-      ];
-      let addQuote = JSON.stringify(newQuote);
-      localStorage.setItem('bookmarks', addQuote );                             // Add new quote to existing quotes
-    } else {                                                                    // If local storage does not exist, create one and add the selected quote
-      let copyText = document.querySelector(`.quote-${ id }`).textContent;
-      let copyAuthor = document.querySelector(`.author-${ id }`).textContent;
-      let existingStorage = localStorage.getItem('bookmarks');
-      let oExistingStorage = JSON.parse(existingStorage);
-      let doesQuoteExist = oExistingStorage.find( quote => quote.id === id);     // check if bookmarked quote already exists
-      if ( !doesQuoteExist ) {
-        setIsBookmarked(true);
-        let newQuote = [
-          ...oExistingStorage,
-          {
-            id,
-            quote: copyText,
-            author: copyAuthor
-          }
-        ]
-        let addQuote = JSON.stringify( newQuote );
-        localStorage.setItem('bookmarks', addQuote);
-      } else {
-        let bookmarksStorage = localStorage.getItem('bookmarks'); 
-        let oBookmarks = JSON.parse(bookmarksStorage);
-        let filteredBookmarks = oBookmarks.filter( ( quote ) => quote.id !== id ); // remove quote if it already exists in local storage using array.filter();
-        let oUpdatedQuotes = JSON.stringify(filteredBookmarks); 
-        localStorage.setItem('bookmarks', oUpdatedQuotes);                         // Add updated Quotes array to local storage
-        setIsBookmarked(false);
-        return;
-      }
-    }
-  }
   return (
       <div className="quote-card">
         <figure>
@@ -91,7 +48,7 @@ const QuoteCard = ( { quote } ) => {
               </p>
           </figcaption>
         </figure>
-        <Utils handleCopyText={()=> handleCopyText(id)} isCopied={ isCopied } handleBookmark={ handleBookmark } isBookmarked={ isBookmarked } id={id}/>
+        <Utils handleCopyText={()=> handleCopyText(id)} isCopied={ isCopied } handleBookmark={ () => handleBookmark(id, setIsBookmarked) } isBookmarked={ isBookmarked } id={id}/>
       </div>
   )
 }

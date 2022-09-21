@@ -35,3 +35,10 @@ export const handleClass = (bookmarks) => {
         return 'no-bookmarks-wrapper'
     }
 }
+
+// Retrieve selected quote from DOM
+export const selectQuote = (id) => { 
+    let copyText = document.querySelector(`.quote-${ id }`).textContent;
+    let copyAuthor = document.querySelector(`.author-${ id }`).textContent;
+    return { copyText, copyAuthor }
+}

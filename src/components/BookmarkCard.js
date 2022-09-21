@@ -1,16 +1,13 @@
 import { BsBookmarkFill } from "react-icons/bs";
+import { retrieveLocalStorage, setLocalStorage } from "../localStorage/localStorageFunctions";
 
 const BookmarkCard = ({ bookmark, setChangeBookmarks, changeBookmarks }) => {
     const { id, author, quote } = bookmark;
     const handleBookmark = (id) => {
-        // Retrieve local storage of bookmarks
-        let retrieveLocalStorage = localStorage.getItem('bookmarks');
-        let retrievedBookmarks = JSON.parse(retrieveLocalStorage);
-        // Remove quote with passed in id from array 
-        let newBookmarks = retrievedBookmarks.filter( ( bookmark ) => bookmark.id !== id);
-        let oUpdatedBookmarks = JSON.stringify(newBookmarks);
-        // Add updated bookmarks to local storage
-        localStorage.setItem('bookmarks', oUpdatedBookmarks);
+        // Retrieve local storage and remove quote with passed in id from array 
+        let newBookmarks = retrieveLocalStorage().filter( ( bookmark ) => bookmark.id !== id);
+        // Set new local storage based on updated bookmarks array
+        setLocalStorage(newBookmarks);
         // Re-render bookmarks by changing state of changeBookmarks( it is included in the dependency array of useEffect hook )
         setChangeBookmarks(!changeBookmarks);
     }
