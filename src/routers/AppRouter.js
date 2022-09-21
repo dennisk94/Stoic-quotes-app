@@ -4,6 +4,7 @@ import AuthorsPage from "../pages/AuthorsPage";
 import BookmarksPage from "../pages/BookmarksPage";
 import HomePage from "../pages/HomePage";
 import SingleAuthorPage from "../pages/SingleAuthorPage";
+import TodayPage from "../pages/TodayPage";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path="/author" element={ <AuthorsPage /> } />
         <Route path="/bookmarks" element={ <BookmarksPage /> } />
         <Route path="/author/:slug" element={ <SingleAuthorPage /> } />
+        <Route path="/today" element={ <TodayPage /> } />
       </Routes>
     </div>
   );

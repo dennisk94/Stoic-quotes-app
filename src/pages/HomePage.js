@@ -10,9 +10,6 @@ const HomePage = () => {
   useEffect(() => {
     const fetchRandomQuotes = async () => {
       const res = await fetch( `https://stoicquotesapi.com/v1/api/quotes?page=${ generateRandomPage() }` ); 
-      // const res = await fetch('https://stoicquotesapi.com/v1/api/quotes'); 
-      // const res = await fetch('https://stoicquotesapi.com/v1/api/quotes/random');
-      // const res = await fetch('https://stoicquotesapi.com/v1/api/quotes/Zeno');
       let data = await res.json();
       setQuotes(data.data);
     }
