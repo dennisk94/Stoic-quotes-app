@@ -13,7 +13,7 @@ function App() {
       <Header />
       <Routes>
         <Route index element={ <HomePage /> }/>
-        <Route path="/author" element={ <AuthorsPage /> } />
+        <Route path="/authors" element={ <AuthorsPage /> } />
         <Route path="/bookmarks" element={ <BookmarksPage /> } />
         <Route path="/author/:slug" element={ <SingleAuthorPage /> } />
         <Route path="/today" element={ <TodayPage /> } />

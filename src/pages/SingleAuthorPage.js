@@ -1,5 +1,6 @@
 import { useParams, } from 'react-router-dom';
 import { useEffect, useState } from 'react';
+import { appTitle } from "../globals/globals";
 import { Carousel } from 'react-responsive-carousel';
 import "react-responsive-carousel/lib/styles/carousel.min.css"; 
 import SingleAuthorQuotes from '../components/SingleAuthorQuotes';
@@ -11,6 +12,7 @@ const SingleAuthorPage = () => {
     const { slug } = useParams();
     useEffect(() => {
         fetchAuthorQuotes( slug, setSingleAuthorQuotes );
+        document.title = `${appTitle} - ${ slug }`;
     }, [slug]);
     
 return (

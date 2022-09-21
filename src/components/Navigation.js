@@ -13,7 +13,7 @@ const Navigation = ( { isSelected, navigationHandler } ) => {
                 <Link to='/' onClick={ navigationHandler}><span className="home-svg"><AiFillHome /></span>Home</Link>
             </li>
             <li>
-                <Link to='/author' onClick={ navigationHandler}><span className="author-svg"><FaRegUserCircle /></span>Author</Link>
+                <Link to='/authors' onClick={ navigationHandler}><span className="author-svg"><FaRegUserCircle /></span>Authors</Link>
             </li>
             <li>
                 <Link to='/bookmarks' onClick={ navigationHandler}><span className="bookmark-svg"><BsBookmark /></span>Bookmarks</Link>

@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { appTitle } from "../globals/globals";
 import BookmarkCard from '../components/BookmarkCard';
 import { retrieveLocalStorage } from '../localStorage/localStorageFunctions';
 import { handleClass } from '../util/util';
@@ -7,6 +8,7 @@ const BookmarksPage = () => {
   const [ bookmarks, setBookmarks ] = useState(null);               // Check if bookmarks exist
   const [ changeBookmarks, setChangeBookmarks ] = useState(false);  // Check if bookmarks has changed, dependency state that runs useEffect
   useEffect(() => {
+    document.title = `${appTitle} - Bookmarks`;
     setBookmarks(retrieveLocalStorage());                           // Retrieve bookmarks from local storage
   }, [changeBookmarks]);
   const bookmarksComponent = () => {

@@ -1,5 +1,10 @@
+import { useEffect } from "react"
+import { appTitle } from "../globals/globals";
 
 const AboutPage = () => {
+  useEffect(() => {
+    document.title = `${appTitle} - About`;
+  }, []);
   return (
     <div className="about-page">
         <div className="about-content-wrapper">

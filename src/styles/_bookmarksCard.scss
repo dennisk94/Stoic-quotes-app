@@ -28,7 +28,7 @@
     }
     .bookmarks-bookmark {
         cursor: pointer;
-        font-size: 1.2rem;
+        font-size: $mid;
     }
     @media ( min-width: $breakpoint-tablet ) {
         max-width: 370px;

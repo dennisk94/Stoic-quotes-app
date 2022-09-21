@@ -11,7 +11,7 @@
         right: 0.5rem;
         top: 0.5rem;
         display: inline-block;
-        font-size: 1.2rem;
+        font-size: $mid;
         cursor: pointer;
     }
     .content-wrapper {
@@ -28,7 +28,7 @@
                 width: 70%;
                 display: inline-block;
                 h2 {
-                    font-size: 1rem;
+                    font-size: $regular;
                 }
                 h2, 
                 p {
@@ -52,7 +52,7 @@
                 margin: 0;
             }
             .biography-heading {
-                font-size: 1rem;
+                font-size: $regular;
                 margin-bottom: .2rem;
             }
             .biography-text {
