@@ -1,0 +1,28 @@
+.about-page {
+    .about-content-wrapper {
+        position: absolute;
+        top: 6rem;
+        right: 0;
+        left: 0;
+        width: 95%;
+        max-width: 800px;
+        margin: 0 auto;
+        p {
+            color: $white;
+            margin: 0;
+            width: 95%;
+            font-size: 1.5rem;
+            margin: 0 auto;
+            line-height: 2rem;
+        }
+        .about-paragraph {
+            margin-bottom: 2rem;
+        }
+        @media ( min-width: $breakpoint-mobile ) {
+            top: 8rem;
+        }
+        @media ( min-width: $breakpoint-desktop ) {
+            top: 10rem;
+        }
+    }
+}
