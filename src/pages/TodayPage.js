@@ -1,15 +1,11 @@
 import { useState, useEffect } from "react"
 import QuoteCard from "../components/QuoteCard"
+import { fetchRandomQuote } from "../fetchRequests/allFetchRequests";
 
 const TodayPage = () => {
     const [ quote, setQuote ] = useState(null);                                           // State for single quote
     useEffect(() => {
-        const fetchRandomQuote = async () => {
-            const res = await fetch( `https://stoicquotesapi.com/v1/api/quotes/random` ); // Fetch a random quote: https://stoicquotesapi.com/v1/api/quotes/random
-            let data = await res.json();
-            setQuote(data);
-        }
-        fetchRandomQuote();
+        fetchRandomQuote(setQuote);
     }, []);
     return (
         <div className="today-page">

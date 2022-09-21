@@ -1,23 +1,9 @@
 import { Carousel } from 'react-responsive-carousel';
 import "react-responsive-carousel/lib/styles/carousel.min.css"; 
 import QuoteCard from './QuoteCard';
+import { settings } from '../carousel/carouselSettings';
 
 const CarouselComponent = ( { quotes } ) => {
-  // Settings for carousel 
-    const settings = {
-        autoPlay:true,
-        interval: 15000,
-        transitionTime: 1350,
-        infiniteLoop:true, 
-        dynamicHeight:true, 
-        showArrows:false, 
-        showStatus:false, 
-        showIndicators:false, 
-        showThumbs:false,
-        emulateTouch:true,
-        useKeyboardArrows:true,
-        ariaLabel:'carousel',
-      }
   return (
     <>
       <Carousel {...settings} className='carousel-outer'>

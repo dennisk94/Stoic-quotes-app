@@ -1,21 +1,13 @@
 import { useState, useEffect } from "react"
 import CarouselComponent from '../components/CarouselComponent';
+import { generateRandomPage } from '../util/util';
+import { fetchRandomQuotes } from "../fetchRequests/allFetchRequests";
 
 const HomePage = () => {
-  // Generate a random number between 1-6. Quotes come from Stoic Quotes API: https://stoicquotesapi.com/
-  // Number range 1-6 comes from Stoic Quotes API's total number of pages. Look at last_page key: https://stoicquotesapi.com/v1/api/quotes
-  const generateRandomPage = () => {                
-    return Math.floor(( Math.random() * 6 ) + 1 );
-  }
   const [ quotes, setQuotes ] = useState(null);                                                             // Quotes state
-
+  generateRandomPage();                                                                                     // Generate random number between 1-6
   useEffect(() => {
-    const fetchRandomQuotes = async () => {
-      const res = await fetch( `https://stoicquotesapi.com/v1/api/quotes?page=${ generateRandomPage() }` ); // Get quotes based on random page number
-      let data = await res.json();
-      setQuotes(data.data);
-    }
-    fetchRandomQuotes();
+    fetchRandomQuotes(generateRandomPage, setQuotes);
   }, []);
   return (
     <div className="home-page">

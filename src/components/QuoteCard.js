@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import Utils from './Utils';
-import { handleThumbnail } from '../util/handleThumbnail';
+import { handleThumbnail } from '../util/util';
 
 const QuoteCard = ( { quote } ) => {
   const { id, body, author, author_id } = quote;
