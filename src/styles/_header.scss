@@ -1,10 +1,8 @@
 .header {
     position: relative;
     .header-bgc {
-        position: absolute;
+        @include position;
         top: 0;
-        right: 0;
-        left: 0;
         display: flex;
         align-items: center;
         justify-content: center;

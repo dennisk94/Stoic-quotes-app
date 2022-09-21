@@ -1,9 +1,7 @@
 .about-page {
     .about-content-wrapper {
-        position: absolute;
+        @include position;
         top: 6rem;
-        right: 0;
-        left: 0;
         width: 95%;
         max-width: 800px;
         margin: 0 auto;

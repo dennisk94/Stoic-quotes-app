@@ -1,6 +1,4 @@
 .today-quote-wrapper {
-    position: absolute;
-    right: 0;
-    left: 0;
+    @include position;
     top: 30%;
 }

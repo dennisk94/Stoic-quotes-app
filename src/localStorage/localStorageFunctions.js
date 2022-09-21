@@ -24,7 +24,6 @@ export const handleBookmark = (id, setIsBookmarked) => {
     } else {                                                                          // If local storage does not exist, create 
                                                                                       // one and add the selected quote
         ;
-        // retrieveLocalStorage();
         let doesQuoteExist = retrieveLocalStorage().find( quote => quote.id === id);     // check if bookmarked quote already exists
         if ( !doesQuoteExist ) {
             setIsBookmarked(true);

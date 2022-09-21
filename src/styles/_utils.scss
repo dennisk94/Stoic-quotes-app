@@ -1,8 +1,6 @@
 .utils {
-    position: absolute;
+    @include position;
     top: 115%;
-    left: 0;
-    right: 0;
     display: flex;
     justify-content: center;
     text-align: center;

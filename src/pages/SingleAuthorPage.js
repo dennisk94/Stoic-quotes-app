@@ -7,7 +7,7 @@ import { fetchAuthorQuotes } from '../fetchRequests/allFetchRequests';
 import { settings } from '../carousel/carouselSettings';
 
 const SingleAuthorPage = () => {
-    const [ singleAuthorQuotes, setSingleAuthorQuotes ] = useState(null);                   // State for single stoic's quotes
+    const [ singleAuthorQuotes, setSingleAuthorQuotes ] = useState(null);                      // State for single stoic's quotes
     const { slug } = useParams();
     useEffect(() => {
         fetchAuthorQuotes( slug, setSingleAuthorQuotes );

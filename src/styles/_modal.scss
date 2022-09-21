@@ -42,8 +42,7 @@
             }
             .author-image {
                 width: 20%;
-                border: none;
-                border-radius: 50%;
+                @include roundedPercent;
             }
         }
         .biography {
@@ -77,14 +76,12 @@
     scrollbar-width: none;  /* Firefox */
 }
 .modal-active {
-        position: absolute;
-        top: 3rem;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        z-index: 10;
-        background-color: $author-bgc;
-        animation: fadein .5s;
+    @include position;
+    top: 3rem;
+    bottom: 0;
+    z-index: 1;
+    background-color: $author-bgc;
+    animation: fadein .5s;
 }
 @keyframes fadein {
 	from {

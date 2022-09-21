@@ -5,14 +5,14 @@ import { handleBookmark } from '../localStorage/localStorageFunctions';
 
 const QuoteCard = ( { quote } ) => {
   const { id, body, author, author_id } = quote;
-  const [ isCopied, setIsCopied ] = useState(false); // state determining if quote was copied or not.
+  const [ isCopied, setIsCopied ] = useState(false);         // state determining if quote was copied or not.
   const [ isBookmarked, setIsBookmarked ] = useState(false); // Check if a quote has been bookmarked
 
   // Copy to clipboard functionality
   // Select the quote by it's id 
   const handleCopyText = (id) => {
     const copyText = async () => { // Handle copying to clipboard functionality
-      let copyText = document.querySelector(`.quote-${ id }`).textContent; // Get quote
+      let copyText = document.querySelector(`.quote-${ id }`).textContent;    // Get quote
       let copyAuthor = document.querySelector(`.author-${ id }`).textContent; // Get author
       // Use the Clipboard API to allow copy functionality
       await navigator.clipboard.writeText(`${ copyText } 
@@ -20,7 +20,7 @@ const QuoteCard = ( { quote } ) => {
 -${ copyAuthor }
       `);
       setIsCopied(true);
-      setTimeout(() => { // Reset copy icon to unfilled after 1s
+      setTimeout(() => {                                                       // Reset copy icon to unfilled after 1s
         setIsCopied(false);
       }, 1000);
     }

@@ -1,5 +1,5 @@
 // Settings for carousel
-export const settings = {                                                                      // Settings for carousel
+export const settings = {                                                                    
     autoPlay:true,
     interval: 15000,
     transitionTime: 1350,

@@ -1,3 +1,16 @@
 @mixin transition {
     transition: all .2s ease-in-out;
 }
+@mixin roundedPercent {
+    border: none;
+    border-radius: 50%;
+}
+@mixin roundedNum {
+    border: none;
+    border-radius: 15px;
+}
+@mixin position {
+    position: absolute;
+    right: 0;
+    left: 0;
+}

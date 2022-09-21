@@ -7,7 +7,7 @@ const BookmarksPage = () => {
   const [ bookmarks, setBookmarks ] = useState(null);               // Check if bookmarks exist
   const [ changeBookmarks, setChangeBookmarks ] = useState(false);  // Check if bookmarks has changed, dependency state that runs useEffect
   useEffect(() => {
-    setBookmarks(retrieveLocalStorage()); // Retrieve bookmarks from local storage
+    setBookmarks(retrieveLocalStorage());                           // Retrieve bookmarks from local storage
   }, [changeBookmarks]);
   const bookmarksComponent = () => {
     if ( bookmarks !== null && bookmarks.length !== 0 ) {           // Check if bookmarks exist and is not an empty array

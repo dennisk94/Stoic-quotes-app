@@ -4,8 +4,7 @@
     width: 65%;
     background-color: $author-bgc;
     overflow: hidden;
-    border: none;
-    border-radius: 15px;
+    @include roundedNum;
     margin: 1rem 0;
     padding: 0 0 0.5rem 0;
     .thumbnail {

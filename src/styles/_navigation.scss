@@ -15,7 +15,7 @@
         padding: 0;
         li {
             list-style: none;
-            font-size: 1.3rem;
+            font-size: 1.1rem;
             margin: 1rem 0;
             a {
                 text-decoration: none;
@@ -34,6 +34,9 @@
                         fill: $nav-anchor;
                     }
                 }
+            }
+            @media ( min-width: $breakpoint-mobile ) {
+                font-size: 1.3rem;
             }
         }
         @media ( min-width: $breakpoint-mobile) {
