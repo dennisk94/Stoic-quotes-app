@@ -1,11 +1,12 @@
 // Thumbnails of stoics
-import marcusThumbnail from '../images/thumbnail/marcus.jpg';
-import senecaThumbnail from '../images/thumbnail/seneca.jpg';
-import epictetusThumbnail from '../images/thumbnail/epictetus.jpg';
-import zenoThumbnail from '../images/thumbnail/zeno.jpg';
-import catoThumbnail from '../images/thumbnail/cato.jpg';
+import marcusThumbnail from '../images/thumbnail/marcus.jpg';       // Marcus Aurelius Thumbnail
+import senecaThumbnail from '../images/thumbnail/seneca.jpg';       // Seneca Thumbnail
+import epictetusThumbnail from '../images/thumbnail/epictetus.jpg'; // Epictetus Thumbnail
+import zenoThumbnail from '../images/thumbnail/zeno.jpg';           // Zeno Thumbnail
+import catoThumbnail from '../images/thumbnail/cato.jpg';           // Cato Thumbnail
 
 // Information pertaining to each stoic
+// Sourced from Wikipedia
 export const authorsData = [
     {
         id: 1,

@@ -1,5 +1,3 @@
-import { useState } from 'react';
-import { BsBookmark } from "react-icons/bs";
 import { BsBookmarkFill } from "react-icons/bs";
 
 const BookmarkCard = ({ bookmark, setChangeBookmarks, changeBookmarks }) => {
@@ -11,7 +9,9 @@ const BookmarkCard = ({ bookmark, setChangeBookmarks, changeBookmarks }) => {
         // Remove quote with passed in id from array 
         let newBookmarks = retrievedBookmarks.filter( ( bookmark ) => bookmark.id !== id);
         let oUpdatedBookmarks = JSON.stringify(newBookmarks);
+        // Add updated bookmarks to local storage
         localStorage.setItem('bookmarks', oUpdatedBookmarks);
+        // Re-render bookmarks by changing state of changeBookmarks( it is included in the dependency array of useEffect hook )
         setChangeBookmarks(!changeBookmarks);
     }
   return (

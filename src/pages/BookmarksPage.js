@@ -2,8 +2,8 @@ import { useState, useEffect } from 'react';
 import BookmarkCard from '../components/BookmarkCard';
 
 const BookmarksPage = () => {
-  const [ bookmarks, setBookmarks ] = useState(null);
-  const [ changeBookmarks, setChangeBookmarks ] = useState(false);
+  const [ bookmarks, setBookmarks ] = useState(null);               // Check if bookmarks exist
+  const [ changeBookmarks, setChangeBookmarks ] = useState(false);  // Check if bookmarks has changed, dependency state that runs useEffect
   useEffect(() => {
     const retrieveLocalStorage = async () => {
       let retrieveLocalStorage = localStorage.getItem('bookmarks');
@@ -12,9 +12,8 @@ const BookmarksPage = () => {
     }
     retrieveLocalStorage();
   }, [changeBookmarks]);
-  console.log(bookmarks);
   const bookmarksComponent = () => {
-    if ( bookmarks !== null && bookmarks.length !== 0 ) {
+    if ( bookmarks !== null && bookmarks.length !== 0 ) {           // Check if bookmarks exist and is not an empty array
       return (
         bookmarks.map( (bookmark, i) => <BookmarkCard bookmark={bookmark} setChangeBookmarks={setChangeBookmarks} changeBookmarks={changeBookmarks} key={i}/>)
       )
@@ -22,7 +21,7 @@ const BookmarksPage = () => {
       return <h1 className='no-bookmarks'>There are no bookmarks...</h1>
     }
   }
-  const handleClass = () => {
+  const handleClass = () => {                                       // Output different className depending on bookmarks state
     if (  bookmarks !== null && bookmarks.length !== 0 ) {
       return 'bookmarks-wrapper'
     } else {

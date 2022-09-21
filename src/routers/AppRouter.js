@@ -1,5 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 import Header from "../components/Header";
+import AboutPage from "../pages/AboutPage";
 import AuthorsPage from "../pages/AuthorsPage";
 import BookmarksPage from "../pages/BookmarksPage";
 import HomePage from "../pages/HomePage";
@@ -16,6 +17,7 @@ function App() {
         <Route path="/bookmarks" element={ <BookmarksPage /> } />
         <Route path="/author/:slug" element={ <SingleAuthorPage /> } />
         <Route path="/today" element={ <TodayPage /> } />
+        <Route path="/about" element={ <AboutPage /> } />
       </Routes>
     </div>
   );

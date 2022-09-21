@@ -5,12 +5,12 @@ import { BiMenuAltLeft } from "react-icons/bi";
 import { Link } from "react-router-dom";
 
 const Header = () => {
-  const [ isSelected, setIsSelected ] = useState(true);
+  const [ isSelected, setIsSelected ] = useState(true); // Change display of header based on state
 
   const navigationHandler = () => {
     setIsSelected(!isSelected);
   }
-  console.log(isSelected);
+
   return (
     <header className="header">
         <div className="header-bgc">

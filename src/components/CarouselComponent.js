@@ -3,6 +3,7 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import QuoteCard from './QuoteCard';
 
 const CarouselComponent = ( { quotes } ) => {
+  // Settings for carousel 
     const settings = {
         autoPlay:true,
         interval: 15000,
@@ -20,7 +21,7 @@ const CarouselComponent = ( { quotes } ) => {
   return (
     <>
       <Carousel {...settings} className='carousel-outer'>
-          { quotes !== null && quotes.map( ( quote, i ) =><QuoteCard quote={ quote } key={ i } />) }      
+        { quotes !== null && quotes.map( ( quote, i ) =><QuoteCard quote={ quote } key={ i } />) }      
       </Carousel>
     </>
     

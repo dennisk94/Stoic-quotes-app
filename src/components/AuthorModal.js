@@ -2,9 +2,7 @@ import { AiOutlineClose } from "react-icons/ai";
 import { FcWikipedia } from "react-icons/fc";
 
 const AuthorModal = ( { isOpen, setIsOpen, author } ) => {
-    const { id, 
-            name,
-            // slug,
+    const { name,
             title,
             born,
             death,
@@ -13,7 +11,8 @@ const AuthorModal = ( { isOpen, setIsOpen, author } ) => {
             externalResource 
         } = author;
   return (
-    <div className={`modal ${ isOpen ? 'modal-active' : 'modal-inactive'}`}>
+    // Render or hide modal depending on state of isOpen
+    <div className={`modal ${ isOpen ? 'modal-active' : 'modal-inactive'}`}> 
         <AiOutlineClose className={ `${isOpen ? 'close-modal' : 'inactive'}` } onClick={ () => setIsOpen(false) }/>
         <div className="content-wrapper">
             <div className="general-info-wrapper">
@@ -38,6 +37,7 @@ const AuthorModal = ( { isOpen, setIsOpen, author } ) => {
                     { biography }
                 </p>
             </div>
+            {/* External link to wikipedia page about selected stoic */}
             <div className="external-resource">
                 <a href={ externalResource } className="wikipedia-link" target="_blank" rel="noreferrer">
                     <FcWikipedia className="wikipedia-link-svg"/>

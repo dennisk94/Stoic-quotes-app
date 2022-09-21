@@ -1,7 +1,7 @@
 import { handleThumbnail } from "../util/handleThumbnail";
 
 const SingleAuthorQuotes = ( { quote } ) => {
-    const { id, author_id, author, body } = quote;
+    const { author_id, author, body } = quote;
   return (
     <figure className="single-author-quote-card">
         { handleThumbnail( author_id ) }

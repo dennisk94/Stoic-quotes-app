@@ -5,18 +5,17 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import SingleAuthorQuotes from '../components/SingleAuthorQuotes';
 
 const SingleAuthorPage = () => {
-    const [ singleAuthorQuotes, setSingleAuthorQuotes ] = useState(null);
+    const [ singleAuthorQuotes, setSingleAuthorQuotes ] = useState(null);                   // State for single stoic's quotes
     const { slug } = useParams();
-    console.log(slug);
     useEffect(() => {
         const fetchAuthorQuotes = async () => {
-            const res = await fetch(`https://stoicquotesapi.com/v1/api/quotes/${ slug }`);
+            const res = await fetch(`https://stoicquotesapi.com/v1/api/quotes/${ slug }`);  // Fetch quotes by author name: https://stoicquotesapi.com/v1/api/quotes/Seneca
             let data = await res.json();
             setSingleAuthorQuotes(data.data);
         }
         fetchAuthorQuotes();
     }, [slug]);
-    const settings = {
+    const settings = {                                                                      // Settings for carousel
         autoPlay:true,
         interval: 15000,
         transitionTime: 1350,
@@ -30,14 +29,13 @@ const SingleAuthorPage = () => {
         useKeyboardArrows:true,
         ariaLabel:'carousel',
     }
-    console.log(singleAuthorQuotes);
 return (
     <div className="single-author-page">
         <Carousel {...settings}>
-            { singleAuthorQuotes !== null ? singleAuthorQuotes.map( ( quote, i ) => { return (
+            { singleAuthorQuotes !== null ? singleAuthorQuotes.map( ( quote, i ) => { return ( // Pass in single author's quotes if the value is not null
                         <SingleAuthorQuotes quote={quote} key={i}/>
             )} ) 
-            : <h1>No quotes found...</h1>}
+            : <h1>The capacity for patience was given us for a reason</h1>}
         </Carousel>
     </div>
 )

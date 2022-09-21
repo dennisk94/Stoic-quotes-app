@@ -1,8 +1,8 @@
-import Marcus from '../images/thumbnail/marcus.jpg';
-import Seneca from '../images/thumbnail/seneca.jpg';
-import Epictetus from '../images/thumbnail/epictetus.jpg';
-import Cato from '../images/thumbnail/cato.jpg';
-import Zeno from '../images/thumbnail/zeno.jpg';
+import Marcus from '../images/thumbnail/marcus.jpg';       // Marcus Aurelius Thumbnail
+import Seneca from '../images/thumbnail/seneca.jpg';       // Seneca Thumbnail
+import Epictetus from '../images/thumbnail/epictetus.jpg'; // Epictetus Thumbnail
+import Cato from '../images/thumbnail/cato.jpg';           // Zeno Thumbnail
+import Zeno from '../images/thumbnail/zeno.jpg';           // Cato Thumbnail
   
 // Use author_id to programmatically display thumbnail
 export const handleThumbnail = ( author_id ) => {

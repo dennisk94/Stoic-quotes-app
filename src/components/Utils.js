@@ -1,7 +1,7 @@
-import { AiOutlineCopy } from "react-icons/ai";
-import { AiFillCopy } from "react-icons/ai";
-import { BsBookmark } from "react-icons/bs";
-import { BsBookmarkFill } from "react-icons/bs";
+import { AiOutlineCopy } from "react-icons/ai";   // Unfilled Copy Icon
+import { AiFillCopy } from "react-icons/ai";      // Unfilled Copy Icon
+import { BsBookmark } from "react-icons/bs";      // Unfilled Bookmark Icon
+import { BsBookmarkFill } from "react-icons/bs";  // Filled Bookmark Icon
 
 const Utils = ( { handleCopyText, isCopied, handleBookmark, isBookmarked, id } ) => {
   return (
